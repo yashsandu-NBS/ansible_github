@@ -1,0 +1,12 @@
+- hosts: 127.0.0.1
+  connection: local
+  become: true
+  vars:
+    git_repository: 'https://github.com/yashsandu-nw/DemoRepo'
+    install_directory: '/home/student/ansible_github/clone'
+  tasks:
+  - name: 'Clone a github repo'
+    git:
+      repo: "{{ service }}"
+      dest: "{{ install_directory }}"
+      
